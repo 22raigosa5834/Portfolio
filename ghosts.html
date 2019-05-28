@@ -1,0 +1,122 @@
+
+<html>
+<head>
+<title>Ghosts</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Ghosts</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    var HEAD_RADIUS = 35;
+var BODY_WIDTH = HEAD_RADIUS * 2;
+var BODY_HEIGHT = 60;
+var NUM_FEET=3;
+var FOOT_RADIUS = (BODY_WIDTH) / (NUM_FEET*2);
+
+var PUPIL_RADIUS = 4;
+var PUPIL_LEFT_OFFSET= 8;
+var PUPIL_RIGHT_OFFSET = 20;
+var EYE_RADIUS = 10;
+var EYE_OFFSET = 14;
+var PUPIL_HEIGHT_OFFSET = 3;
+
+function start () {
+    var centerX = getWidth()/2;
+    var centerY = getHeight()/2;
+    drawGhost(centerX, centerY, Color.red);
+    drawGhost(120,100, Color.orange);
+    drawGhost(300,200, Color.black);
+    drawGhost (250,340, Color.green);
+    drawGhost(40,50, Color.yellow);
+    
+
+function drawGhost (centerX, centerY, color){
+    var head = new Circle (HEAD_RADIUS);
+    head.setPosition( centerX, centerY);
+    head.setColor(color);
+    add (head);
+    
+    var centerFoot= new Circle (FOOT_RADIUS);
+    centerFoot.setPosition(centerX, centerY + BODY_HEIGHT );
+    centerFoot.setColor(color);
+    add(centerFoot);
+  
+    var leftFoot= new Circle (FOOT_RADIUS);
+    leftFoot.setPosition(centerX - (FOOT_RADIUS*2), centerY + BODY_HEIGHT);
+    leftFoot.setColor(color);
+    add(leftFoot);
+    
+    var rightFoot= new Circle (FOOT_RADIUS);
+    rightFoot.setPosition(centerX + (FOOT_RADIUS*2), centerY + BODY_HEIGHT);
+    rightFoot.setColor(color);
+    add(rightFoot);
+    
+    var body = new Rectangle (BODY_WIDTH, BODY_HEIGHT);
+    body.setPosition (centerX - BODY_WIDTH / 2, centerY);
+    body.setColor(color);
+    add(body);
+    
+    var rightEye = new Circle (EYE_RADIUS);
+    rightEye.setPosition (centerX + EYE_OFFSET, centerY);
+    rightEye.setColor(Color.white);
+    add (rightEye);
+    
+    var leftEye= new Circle (EYE_RADIUS);
+    leftEye.setPosition(centerX-EYE_OFFSET, centerY);
+    leftEye.setColor(Color.white);
+    add(leftEye);
+    
+    var rightPupil = new Circle (PUPIL_RADIUS);
+    rightPupil.setPosition(centerX + PUPIL_LEFT_OFFSET, centerY);
+    rightPupil.setColor(Color.black);
+    add(rightPupil);
+    
+    var leftPupil = new Circle (PUPIL_RADIUS);
+    leftPupil.setPosition(centerX - PUPIL_RIGHT_OFFSET, centerY);
+    leftPupil.setColor(Color.black);
+    add(leftPupil);
+}
+}
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>

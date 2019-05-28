@@ -1,0 +1,102 @@
+<html>
+<head>
+<title>Gold metal for outstanding medal design</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script type="text/javascript" src="https://static.codehs.com/gulp/ec071a764d83f34910ba21fab0b0f0cc20293542/chs-js-lib/chs.js"></script>
+
+
+<style>
+canvas {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+}
+
+pre {
+    border: 1px solid black;
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    background-color: #F5F5F5;
+}
+</style>
+
+</head>
+
+<body>
+<h1>Gold metal for outstanding medal design</h1>
+
+
+
+<canvas
+width="400"
+height="500"
+class="codehs-editor-canvas"></canvas>
+<pre id="console"></pre>
+
+<script>
+window.onload = function() {
+
+    function start (){
+	var oval = new Oval(100, 210);
+    oval.setPosition(70, 200);
+    var sand = new Color (239, 224, 59);
+    oval.setColor (sand);
+    add(oval);
+    
+    var oval = new Oval(100, 210);
+    oval.setPosition(60, 200);
+    oval.setColor(Color.yellow);
+    add(oval);
+    
+    var oval = new Oval(100, 210);
+    oval.setPosition(190, 200);
+    var silver = new Color (112, 112, 112);
+    oval.setColor (silver);
+    add(oval);
+    
+    var oval = new Oval(100, 210);
+    oval.setPosition(180, 200);
+    oval.setColor(Color.gray);
+    add(oval);
+    
+     var oval = new Oval(100, 210);
+    oval.setPosition(310, 200);
+    var bronzii = new Color (132, 96, 96);
+    oval.setColor (bronzii);
+    add(oval);
+    
+    var oval = new Oval(100, 210);
+    oval.setPosition(300, 200);
+    var pink = new Color (226, 165, 165);
+    oval.setColor (pink);
+    add(oval);
+    
+    var arc = new Arc(170, 1, 2, 10);
+    arc.setPosition(70, 100);
+    arc.setColor(Color.blue);
+    add(arc);
+    
+    var arc = new Arc(170, 1, 2, 10);
+    arc.setPosition(190, 100);
+    arc.setColor(Color.blue);
+    add(arc);
+    
+    var arc = new Arc(170, 1, 2, 10);
+    arc.setPosition(310, 100);
+    arc.setColor(Color.blue);
+    add(arc);
+
+    }
+
+
+    if (typeof start === 'function') {
+        start();
+    }
+};
+</script>
+
+</body>
+</html>
